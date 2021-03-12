@@ -145,6 +145,17 @@ limitations under the License.
         </configuration>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-remote-resources-plugin</artifactId>
+        <configuration>
+          <!-- disable maven-remote-resources-plugin because it leads to
+          [ERROR] Failed to execute goal org.apache.maven.plugins:maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) on project flume-ng-morphline-solr-sink: Execution process-resource-bundles of goal org.apache.maven.plugins:maven-remote-resources-plugin:1.7.0:process failed: For artifact {rome:null:null:jar}: The artifactId cannot be empty. -> [Help 1]
+          -->
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 </project>
