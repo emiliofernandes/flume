@@ -633,7 +633,10 @@ public class TestSyslogUtils {
 
     String hostname = SyslogUtils.getHostname(socketAddress);
 
-    assertEquals("localhost", hostname);
+    if (!"localhost".equals(hostname) && !"127.0.0.1".equals(hostname)) {
+      fail("Expected either 'localhost' or '127.0.0.1'");
+    }
+
   }
 
   @Test
