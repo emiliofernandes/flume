@@ -19,6 +19,7 @@
 package org.apache.flume.source;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.apache.flume.Event;
 import org.jboss.netty.buffer.ChannelBuffer;
