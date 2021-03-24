@@ -38,6 +38,7 @@ before_install:
   - sudo apt install -y openjdk-8-jdk
   - export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-${TRAVIS_CPU_ARCH}/"
   - export PATH="$JAVA_HOME/bin:$PATH"
+  - sudo echo "127.0.0.1   localhost" >> /etc/hosts # for TestSyslogUdpSource
 
 install: true
 
