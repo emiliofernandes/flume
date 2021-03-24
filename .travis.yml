@@ -15,18 +15,18 @@
 # specific language governing permissions and limitations
 # under the License.
 
-#dist: trusty
 language: generic
-#jdk:
-#  - oraclejdk8
 
-#jobs:
-#  include:
- #   - name: "Linux aarch64"
-arch: arm64-graviton2
-dist: focal
-virt: lxd
-group: edge
+jobs:
+  include:
+    - name: "Linux amd64"
+      arch: amd64
+      dist: trusty
+    - name: "Linux aarch64"
+      arch: arm64-graviton2
+      dist: focal
+      virt: lxd
+      group: edge
 
 cache:
   directories:
@@ -38,7 +38,6 @@ before_install:
   - sudo apt install -y openjdk-8-jdk
   - export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-${TRAVIS_CPU_ARCH}/"
   - export PATH="$JAVA_HOME/bin:$PATH"
-  - sudo echo "127.0.0.1   localhost" >> /etc/hosts # for TestSyslogUdpSource
 
 install: true
 
